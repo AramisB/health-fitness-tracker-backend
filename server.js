@@ -16,17 +16,24 @@ connectDB();
 // Middleware
 app.use(cors({
     origin: 'https://monkfish-app-od5cu.ondigitalocean.app/'
-  })); // Enable CORS
+})); // Enable CORS
 app.use(express.json());
 
 // Routes
-app.get('/', (req, res) => {
-  res.redirect('/api');
-});
 app.use('/api', userRoutes);
 app.use('/api/log-exercise', ExerciseLogRoutes);
 app.use('/api/goals', GoalsRoutes);
 app.use('/api/progress', ProgressRoutes);
+
+// Handle /api route
+app.get('/api', (req, res) => {
+  res.send('Welcome to the API of Health and Fitness Tracker!');
+});
+
+// Handle root route
+app.get('/', (req, res) => {
+    res.send('Welcome to the Health and Fitness Tracker API!');
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
