@@ -9,13 +9,17 @@ const ProgressRoutes = require('./routes/ProgressRoutes');
 require('dotenv').config();
 
 const app = express();
+const allowedOrigins = [
+    'https://monkfish-app-od5cu.ondigitalocean.app',
+  ];
 
 // Connect Database
 connectDB();
 
 // Middleware
 app.use(cors({
-    origin: 'https://monkfish-app-od5cu.ondigitalocean.app/'
+    origin: allowedOrigins,
+    credentials: true,
 })); // Enable CORS
 app.use(express.json());
 
