@@ -15,7 +15,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-    origin: 'https://health-fitness-tracker.vercel.app'
+    origin: 'https://monkfish-app-od5cu.ondigitalocean.app/'
   })); // Enable CORS
 app.use(express.json());
 
