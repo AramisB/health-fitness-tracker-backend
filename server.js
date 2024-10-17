@@ -20,6 +20,9 @@ app.use(cors({
 app.use(express.json());
 
 // Routes
+app.get('/', (req, res) => {
+  res.redirect('/api');
+});
 app.use('/api', userRoutes);
 app.use('/api/log-exercise', ExerciseLogRoutes);
 app.use('/api/goals', GoalsRoutes);
