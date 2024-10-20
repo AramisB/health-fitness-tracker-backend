@@ -1,8 +1,7 @@
-Health & Fitness Tracker - Backend
+- Health & Fitness Tracker - Backend
 This is the backend for the Health & Fitness Tracker app. It provides a RESTful API that handles user authentication, exercise logging, goal tracking, and progress retrieval. The backend is built using Node.js, Express, and MongoDB.
 
-Features
-
+- Features:
 User authentication using JWT (JSON Web Token).
 
 CRUD operations for user profiles, exercise logs, goals, and progress tracking.
@@ -13,7 +12,7 @@ MongoDB as the database, connected via MongoDB Atlas.
 
 Deployed on DigitalOcean for a stable production environment.
 
-Technologies Used
+- Technologies Used
 
 Node.js: Runtime environment for executing JavaScript on the server.
 
@@ -29,7 +28,7 @@ DigitalOcean: Cloud provider for hosting the backend.
 
 MongoDB Atlas: Cloud-hosted MongoDB database.
 
-Installation
+- Installation
 
 Clone the Repository:
 
@@ -53,11 +52,11 @@ Run the Backend Server:
 
 npm start
 
-Access the API:
+- Access the API:
 
 The server will run on http://localhost:5000.
 
-API Endpoints
+- API Endpoints
 
 /api/register - Register a new user
 
@@ -69,7 +68,7 @@ API Endpoints
 
 /api/progress - View progress over time (Authenticated route)
 
-Deployment
+- Deployment
 
 The backend is deployed using DigitalOcean. You can access the live API at:
 
