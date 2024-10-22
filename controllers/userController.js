@@ -7,7 +7,7 @@ const generateToken = (user) => {
     { id: user._id, email: user.email },
     process.env.JWT_SECRET,
     { expiresIn: '1h' },
-};
+)};
 
 // Create a new user (registration)
 const createUser = async (req, res) => {
