@@ -8,11 +8,12 @@ const GoalsRoutes = require('./routes/GoalsRoutes');
 const ProgressRoutes = require('./routes/ProgressRoutes');
 const dashboardRoutes = require('./routes/DashboardRoutes');
 require('dotenv').config();
+const path = require('path'); // Import path module
 
 const app = express();
 const allowedOrigins = [
     'https://monkfish-app-od5cu.ondigitalocean.app',
-  ];
+];
 
 // Connect Database
 connectDB();
@@ -29,16 +30,24 @@ app.use('/api', userRoutes);
 app.use('/api/log-exercise', ExerciseLogRoutes);
 app.use('/api/goals', GoalsRoutes);
 app.use('/api/progress', ProgressRoutes);
-app.use('/api/dashboard', dashboardRoutes)
+app.use('/api/dashboard', dashboardRoutes);
 
 // Handle /api route
 app.get('/api', (req, res) => {
-  res.send('Welcome to the API of Health and Fitness Tracker!');
+    res.send('Welcome to the API of Health and Fitness Tracker!');
 });
 
 // Handle root route
 app.get('/', (req, res) => {
     res.send('Welcome to the Health and Fitness Tracker API!');
+});
+
+// Serve static files from the React app (after build)
+app.use(express.static(path.join(__dirname, 'client/build'))); // Adjust this path to your build directory
+
+// Catch-all route to serve React app
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html')); // Adjust this path as needed
 });
 
 // Error handling middleware
