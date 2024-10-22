@@ -1,5 +1,5 @@
 const ExerciseLog = require('./ExerciseLogModel');
-const Goal = require('./GoalModel');
+const Goal = require('./GoalsModel');
 const Progress = require('./ProgressModel');
 
 // Function to get exercise logs for the user
