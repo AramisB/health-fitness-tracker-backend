@@ -43,11 +43,10 @@ app.get('/', (req, res) => {
 });
 
 // Serve static files from the React app (after build)
-app.use(express.static(path.join(__dirname, 'client/build'))); // Adjust this path to your build directory
-
+app.use(express.static(path.join(__dirname, 'client/build')));
 // Catch-all route to serve React app
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html')); // Adjust this path as needed
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
 // Error handling middleware
