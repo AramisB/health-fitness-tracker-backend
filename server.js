@@ -6,9 +6,9 @@ const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const GoalsRoutes = require('./routes/GoalsRoutes');
 const ProgressRoutes = require('./routes/ProgressRoutes');
-const dashboardRoutes = require('./routes/DashboardRoutes');
+const DashboardRoutes = require('./routes/DashboardRoutes');
 require('dotenv').config();
-const path = require('path'); // Import path module
+const path = require('path');
 
 const app = express();
 const allowedOrigins = [
@@ -30,7 +30,7 @@ app.use('/api', userRoutes);
 app.use('/api/log-exercise', ExerciseLogRoutes);
 app.use('/api/goals', GoalsRoutes);
 app.use('/api/progress', ProgressRoutes);
-app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/dashboard', DashboardRoutes);
 
 // Handle /api route
 app.get('/api', (req, res) => {
