@@ -6,6 +6,7 @@ const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const GoalsRoutes = require('./routes/GoalsRoutes');
 const ProgressRoutes = require('./routes/ProgressRoutes');
+const dashboardRoutes = require('./routes/DashboardRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -28,6 +29,7 @@ app.use('/api', userRoutes);
 app.use('/api/log-exercise', ExerciseLogRoutes);
 app.use('/api/goals', GoalsRoutes);
 app.use('/api/progress', ProgressRoutes);
+app.use('/api/dashboard', dashboardRoutes)
 
 // Handle /api route
 app.get('/api', (req, res) => {
