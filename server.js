@@ -27,10 +27,10 @@ app.use(express.json());
 
 // Routes
 app.use('/api', userRoutes);
-app.use('/api/', ExerciseLogRoutes);
-app.use('/api/', GoalsRoutes);
-app.use('/api/', ProgressRoutes);
-app.use('/api/', DashboardRoutes);
+app.use('/api/log-exercise', ExerciseLogRoutes);
+app.use('/api/goals', GoalsRoutes);
+app.use('/api/progress', ProgressRoutes);
+app.use('/api/dashboard', DashboardRoutes);
 
 // Handle /api route
 app.get('/api', (req, res) => {
