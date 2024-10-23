@@ -4,6 +4,6 @@ const DashboardController = require('../controllers/DashboardController');
 const authMiddleware = require('../middlewares/AuthMiddleware');
 
 // Dashboard route (protected)
-router.get('/dashboard', authMiddleware, DashboardController.getDashboardData);
+router.get('/', authMiddleware, DashboardController.getDashboardData);
 
 module.exports = router;
