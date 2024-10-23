@@ -43,10 +43,10 @@ app.get('/', (req, res) => {
 });
 
 // Serve static files from the React app (after build)
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'health-fitness-tracker-frontend/build')));
 // Catch-all route to serve React app
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'health-fitness-tracker-frontend/build', 'index.html'));
 });
 
 // Error handling middleware
