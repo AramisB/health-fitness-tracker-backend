@@ -35,6 +35,7 @@ const getDashboardData = async (req, res) => {
       return res.status(200).json({
           success: true,
           data: {
+              name: req.user.name,
               exercises: exercises,
               goals: goals,
               progress: progress,
